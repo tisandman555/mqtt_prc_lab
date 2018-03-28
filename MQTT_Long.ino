@@ -25,10 +25,10 @@
 #define QOS         1
 #define TIMEOUT     10000L
 
-int finished = 0;
-int server_connect = 0;
-int msg_counter=0;
-int reconnect_flag=0;
+volatile int finished = 0;
+volatile int server_connect = 0;
+volatile int msg_counter=0;
+volatile int reconnect_flag=0;
  
 void connLost(void *context, char *cause) {
   MQTTAsync client = (MQTTAsync)context;
